@@ -2,8 +2,8 @@
 //  APAuthV2Info.m
 //  AliSDKDemo
 //
-//  Created by 方彬 on 12/25/14.
-//  Copyright (c) 2014 Alipay.com. All rights reserved.
+//  Created by 亦澄 on 16-8-12.
+//  Copyright (c) 2016年 Alipay. All rights reserved.
 //
 
 #import "APAuthV2Info.h"
@@ -16,20 +16,42 @@
     if (self.appID.length != 16||self.pid.length != 16) {
         return nil;
     }
-    NSArray *decriptionArray = @[[NSString stringWithFormat:@"app_id=\"%@\"", self.appID],
-                                 [NSString stringWithFormat:@"pid=\"%@\"", self.pid],
-                                 [NSString stringWithFormat:@"apiname=\"%@\"", self.apiName?self.apiName:@"com.alipay.account.auth"],
-                                 [NSString stringWithFormat:@"app_name=\"%@\"", self.appName?self.appName:@"mc"],
-                                 [NSString stringWithFormat:@"biz_type=\"%@\"", self.bizType?self.bizType:@"openservice"],
-                                 [NSString stringWithFormat:@"product_id=\"%@\"", self.productID?self.productID:@"WAP_FAST_LOGIN"],
-                                 [NSString stringWithFormat:@"scope=\"%@\"", self.scope?self.scope:@"kuaijie"],
-                                 [NSString stringWithFormat:@"target_id=\"%@\"", self.targetID?self.targetID:@"20141225xxxx"],
-                                 [NSString stringWithFormat:@"auth_type=\"%@\"", self.authType?self.authType:@"AUTHACCOUNT"],
-                                 [NSString stringWithFormat:@"sign_date=\"%@\"", self.signDate?self.signDate:@"2014-12-25 00:00:00"],
-                                 [NSString stringWithFormat:@"service=\"%@\"", self.service?self.service:@"mobile.securitypay.pay"]];
     
-    return [decriptionArray componentsJoinedByString:@"&"];
+    // NOTE: 增加不变部分数据
+    NSMutableDictionary *tmpDict = [NSMutableDictionary new];
+    [tmpDict addEntriesFromDictionary:@{@"app_id":_appID,
+                                        @"pid":_pid,
+                                        @"apiname":@"com.alipay.account.auth",
+                                        @"method":@"alipay.open.auth.sdk.code.get",
+                                        @"app_name":@"mc",
+                                        @"biz_type":@"openservice",
+                                        @"product_id":@"APP_FAST_LOGIN",
+                                        @"scope":@"kuaijie",
+                                        @"target_id":(_targetID?:@"20141225xxxx"),
+                                        @"auth_type":(_authType?:@"AUTHACCOUNT")}];
     
+    
+    // NOTE: 排序，得出最终请求字串
+    NSArray* sortedKeyArray = [[tmpDict allKeys] sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    NSMutableArray *tmpArray = [NSMutableArray new];
+    for (NSString* key in sortedKeyArray) {
+        NSString* orderItem = [self itemWithKey:key andValue:[tmpDict objectForKey:key]];
+        if (orderItem.length > 0) {
+            [tmpArray addObject:orderItem];
+        }
+    }
+    return [tmpArray componentsJoinedByString:@"&"];
+}
+
+- (NSString*)itemWithKey:(NSString*)key andValue:(NSString*)value
+{
+    if (key.length > 0 && value.length > 0) {
+        return [NSString stringWithFormat:@"%@=%@", key, value];
+    }
+    return nil;
 }
 
 @end

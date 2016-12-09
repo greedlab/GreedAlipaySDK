@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name = "GreedAlipaySDK"
-  s.version = "15.0.6"
+  s.version = "15.2.0"
   s.license = "MIT"
   s.summary = "iOS版支付宝移动支付开发工具包"
   s.homepage = "https://github.com/greedlab/GreedAlipaySDK"

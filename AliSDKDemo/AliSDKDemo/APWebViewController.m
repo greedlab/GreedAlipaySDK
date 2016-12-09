@@ -112,13 +112,10 @@
         [self.urlInputView addSubview:self.urlInput];
         
         UIButton* btn = [[UIButton alloc]initWithFrame:CGRectMake(230, 60, 60, 30)];
-        btn.backgroundColor = [UIColor grayColor];
+        btn.backgroundColor = [UIColor colorWithRed:81.0f/255.0f green:141.0f/255.0f blue:229.0f/255.0f alpha:1.0f];
         btn.layer.cornerRadius = 4.0f;
         btn.layer.masksToBounds = YES;
-        btn.layer.borderColor = [UIColor blueColor].CGColor;
-        btn.layer.borderWidth = 2.0f;
         
-        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [btn setTitle:@"Go" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(onOpenInputedUrl:) forControlEvents:UIControlEventTouchUpInside];
         [self.urlInputView addSubview:btn];

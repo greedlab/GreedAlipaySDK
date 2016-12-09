@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		657936001D5D867200BA5096 /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 657935FF1D5D867200BA5096 /* APAuthV2Info.m */; };
 		65CCD1D31C3BDF8200E93817 /* APWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CCD1D21C3BDF8200E93817 /* APWebViewController.m */; };
-		B60C9D4E1A63ACD1008370AD /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = B60C9D4D1A63ACD1008370AD /* APAuthV2Info.m */; };
 		B6633993185202F1005280A2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6633991185202F1005280A2 /* Icon.png */; };
 		B6633994185202F1005280A2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B6633992185202F1005280A2 /* Icon@2x.png */; };
 		B670909C1908FB2A00E5688D /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = B67090401908FB2A00E5688D /* base64.m */; };
@@ -44,10 +44,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		657935FE1D5D867200BA5096 /* APAuthV2Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAuthV2Info.h; sourceTree = "<group>"; };
+		657935FF1D5D867200BA5096 /* APAuthV2Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAuthV2Info.m; sourceTree = "<group>"; };
 		65CCD1D11C3BDF8200E93817 /* APWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APWebViewController.h; sourceTree = "<group>"; };
 		65CCD1D21C3BDF8200E93817 /* APWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APWebViewController.m; sourceTree = "<group>"; };
-		B60C9D4C1A63ACD1008370AD /* APAuthV2Info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAuthV2Info.h; sourceTree = "<group>"; };
-		B60C9D4D1A63ACD1008370AD /* APAuthV2Info.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAuthV2Info.m; sourceTree = "<group>"; };
 		B6633991185202F1005280A2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B6633992185202F1005280A2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B670903F1908FB2A00E5688D /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
@@ -356,8 +356,8 @@
 				B670903E1908FB2A00E5688D /* Util */,
 				B6C743A81848A8E700358DD3 /* Order.h */,
 				B6C743A91848A8E700358DD3 /* Order.m */,
-				B60C9D4C1A63ACD1008370AD /* APAuthV2Info.h */,
-				B60C9D4D1A63ACD1008370AD /* APAuthV2Info.m */,
+				657935FE1D5D867200BA5096 /* APAuthV2Info.h */,
+				657935FF1D5D867200BA5096 /* APAuthV2Info.m */,
 				B6C74382184897ED00358DD3 /* APAppDelegate.h */,
 				B6C74383184897ED00358DD3 /* APAppDelegate.m */,
 				B6C74385184897ED00358DD3 /* Main.storyboard */,
@@ -459,7 +459,7 @@
 				B6C7438A184897ED00358DD3 /* APViewController.m in Sources */,
 				65CCD1D31C3BDF8200E93817 /* APWebViewController.m in Sources */,
 				B670909D1908FB2A00E5688D /* DataSigner.m in Sources */,
-				B60C9D4E1A63ACD1008370AD /* APAuthV2Info.m in Sources */,
+				657936001D5D867200BA5096 /* APAuthV2Info.m in Sources */,
 				B67090A21908FB2A00E5688D /* RSADataSigner.m in Sources */,
 				B67090A11908FB2A00E5688D /* openssl_wrapper.m in Sources */,
 				B6C743AA1848A8E700358DD3 /* Order.m in Sources */,
